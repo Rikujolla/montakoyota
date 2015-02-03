@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-montakoyota
+Exec=harbour-montakoyota
+Name=harbour-montakoyota
+# translation example:
+# your app name in German locale (de)
+Name[de]=harbour-montakoyota
+# Tranlation to Finnish (fi)
+Name[fi]=Montako yötä?
+
