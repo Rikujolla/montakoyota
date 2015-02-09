@@ -41,6 +41,10 @@
         <source>New event</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>nights</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SecondPage</name>
@@ -83,11 +87,22 @@
         <translation type="obsolete">Hallo Matrosen</translation>
     </message>
     <message>
-        <source>Birthday</source>
+        <source>Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Update</source>
+        <source>Event name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter event</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>harbour-montakoyota</name>
+    <message>
+        <source>Bitday</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -77,9 +77,25 @@ Page {
 
             // From org.nemomobile.thumbnailer
             source:  "image://nemoThumbnail/" + url
+//            source:  "home/nemo/Pictures/montakoyota" + url //Not working
 
             sourceSize.width: grid.cellWidth
             sourceSize.height: grid.cellHeight
+
+            Text {
+                font.bold: true
+                style: Text.Raised
+                text : "Birthday \n" + 5 + " " + qsTr("nights")
+                color: colorvalue
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
+//                Label {text: "hoo"}
+//                horizontalAlignment: Text.AlignHCenter
+//                verticalAlignment: Text.AlignVCenter
+//                anchors.horizontalCenterOffset: 1;
+//                anchors.verticalCenterOffset: 1;
+                //                color: ColorAnimation { from: "white"; to: "black"; duration: 200 }
+            }
 
             MouseArea {
                 anchors.fill: parent

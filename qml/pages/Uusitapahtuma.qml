@@ -30,16 +30,15 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+//import QtQuick.Dialogs 1.0
 
 
 Page {
     id: page
 
-    // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
         anchors.fill: parent
 
-        // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
             MenuItem {
                 text: qsTr("Show Page 2")
@@ -66,25 +65,22 @@ Page {
             }
             Label {
                 x: Theme.paddingLarge
-                text: qsTr("Birthday") + " " + paivitys.milseks + " " + paivitys.ero;
-                color: Theme.secondaryHighlightColor
+                text: eventname + " " + paivitys.milseks + " " + paivitys.ero;
+//                color: Theme.secondaryHighlightColor
+                color: colorvalue
 //                font.pixelSize: Theme.fontSizeExtraLarge
             }
 
             Item {
                 id: paivitys
                 property int paiva : 2;
-                property int paivat : 5;
+//                property int paivat : 5;
                 property int milseks;
                 property double ero : 21;
-                property date testos;
+//                property date testos;
                 function countNights(){
             // How many dates count
                 var today = new Date();
-//                paiva = today.prototype.getDate();
-//                    paiva = today.getDate();
-//                    paiva = today.getDate();
-//                    testos = button.tiikro;
                     // The day changes at 6 am, so need to subtract 6*60*60*1000
                     ero = (button.tiikro.getTime()-today.getTime()-6*60*60*1000)/(1000*60*60*24);
                     milseks = Math.ceil(ero);
@@ -98,6 +94,58 @@ Page {
 //                repeat: false
 //                onTriggered: paivitys.countNights()
 //            }
+
+            TextField {
+                id: event
+                width: page.width
+                placeholderText: qsTr("Enter event")
+//                placeholderText: eventname
+                label: qsTr("Event name")
+                EnterKey.enabled: text.length > 0
+                EnterKey.onClicked: eventname = text
+
+            }
+
+            Rectangle{
+                width: 300
+                height:300
+//                delegate: Image {
+//                source: '/home/nemo/Pictures/montakoyota/1.png'
+/*                fillMode: Image.PreserveAspectFit
+                sourceSize.height: window.height * 2
+                asynchronous: true
+                anchors.fill: parent
+
+                PinchArea {
+                    anchors.fill: parent
+                    pinch.target: parent
+                    pinch.minimumScale: 1
+                    pinch.maximumScale: 4
+                } */
+//                }
+            }
+
+            Rectangle {
+                id: colorIndicator
+                color: "transparent"
+                width: 30
+                height: 30
+                //                width: theme.itemSizeSmall
+//                height: theme.itemSizeSmall
+            }
+
+            Button {
+                id: button2
+                text: "Choose text color"
+
+                onClicked: {
+                    var dialog2 = pageStack.push("Sailfish.Silica.ColorPickerDialog")
+                    dialog2.accepted.connect(function() {
+                        colorIndicator.color = dialog2.color;
+                        colorvalue = dialog2.color
+                    })
+                }
+            }
 
             Button {
                 text: qsTr("Update")
@@ -124,7 +172,7 @@ Page {
 
                 onClicked: {
                     var dialog = pageStack.push(pickerComponent, {
-                        date: new Date('2015/02/04') // Feb 04 2015
+                        date: new Date('2015/06/26') // Jun 26 2015
 //                        date: new Date(2015, 1, 4, 8, 0, 0) // Feb 04 2015
                     })
                     dialog.accepted.connect(function() {
@@ -138,10 +186,46 @@ Page {
                     DatePickerDialog {}
                 }
             }
+/*// Opening the picture file, not working in SailfishOS
+            FileDialog {
+                id: fileDialog
+                title: "Please choose a file"
+                onAccepted: {
+                    console.log("You chose: " + fileDialog.fileUrls)
+                    Qt.quit()
+                }
+                onRejected: {
+                    console.log("Canceled")
+                    Qt.quit()
+                }
+                Component.onCompleted: visible = true
+            }
 
+// End of picture file dialog */
 
+/*// Start dialoki // Not working
+            Dialog {
+                property string name
 
+                Column {
+                    width: parent.width
 
+                    DialogHeader { }
+                    TextField {
+                        id: nameField
+                        width: 480
+                        placeholderText: "Path"
+                    }
+                }
+
+                onDone: {
+                    if (result == DialogResult.Accepted) {
+                        name = nameField.text
+                    }
+                }
+            }
+
+// Dialoki */
 
 
         }

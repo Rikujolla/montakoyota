@@ -26,7 +26,8 @@ OTHER_FILES += qml/harbour-montakoyota.qml \
     qml/pages/Kuvasivu.qml \
     qml/pages/Tapahtuma.qml \
     qml/pages/Uusitapahtuma.qml \
-    qml/pages/Tietoja.qml
+    qml/pages/Tietoja.qml \
+    qml/TodoModel.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

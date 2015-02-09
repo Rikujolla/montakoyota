@@ -42,6 +42,13 @@ ApplicationWindow
 
     initialPage: Component { Kuvasivu { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
+// Global variables
+    property string eventname:qsTr("Bitday")
+    property string colorvalue: Theme.secondaryHighlightColor
+// End global variables
+    TodoModel {
+        id: todoModel
+    }
 }
 
 
