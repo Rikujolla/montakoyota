@@ -75,27 +75,31 @@
         <translation type="unfinished">Zur Seite 2</translation>
     </message>
     <message>
-        <source>Kuvasivu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>UI Template</source>
-        <translation type="unfinished">UI-Vorlage</translation>
+        <translation type="obsolete">UI-Vorlage</translation>
     </message>
     <message>
         <source>Hello Sailors</source>
         <translation type="obsolete">Hallo Matrosen</translation>
     </message>
     <message>
-        <source>Update</source>
+        <source>Kuvasivu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Event name</source>
+        <source>Event Design</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>nights</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enter event</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -61,15 +61,13 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
             PageHeader {
-                title: qsTr("UI Template")
+                title: qsTr("Event Design")
             }
-            Label {
+/*            Label {
                 x: Theme.paddingLarge
                 text: eventname + " " + paivitys.milseks + " " + paivitys.ero;
-//                color: Theme.secondaryHighlightColor
                 color: colorvalue
-//                font.pixelSize: Theme.fontSizeExtraLarge
-            }
+            } */
 
             Item {
                 id: paivitys
@@ -95,20 +93,16 @@ Page {
 //                onTriggered: paivitys.countNights()
 //            }
 
-            TextField {
-                id: event
-                width: page.width
-                placeholderText: qsTr("Enter event")
-//                placeholderText: eventname
-                label: qsTr("Event name")
-                EnterKey.enabled: text.length > 0
-                EnterKey.onClicked: eventname = text
-
-            }
+//Image {
+//    source:"1.png"
+//}
 
             Rectangle{
-                width: 300
-                height:300
+//            Image {
+                width: 270
+                height:270
+//                source: "aa.png"
+                anchors.horizontalCenter: parent.horizontalCenter
 //                delegate: Image {
 //                source: '/home/nemo/Pictures/montakoyota/1.png'
 /*                fillMode: Image.PreserveAspectFit
@@ -123,16 +117,46 @@ Page {
                     pinch.maximumScale: 4
                 } */
 //                }
+//                delegate: Image {
+//                    source: "1.png"
+//                }
+
+                Text {
+                    font.bold: true
+                    style: Text.Raised
+                    text : eventname + "\n" + paivitys.milseks + " " + qsTr("nights")
+                    color: colorvalue
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+    //                Label {text: "hoo"}
+    //                horizontalAlignment: Text.AlignHCenter
+    //                verticalAlignment: Text.AlignVCenter
+    //                anchors.horizontalCenterOffset: 1;
+    //                anchors.verticalCenterOffset: 1;
+                    //                color: ColorAnimation { from: "white"; to: "black"; duration: 200 }
+                }
+//                }
             }
 
-            Rectangle {
+            TextField {
+                id: event
+                width: page.width
+                placeholderText: qsTr("Enter event")
+//                placeholderText: eventname
+                label: qsTr("Event name")
+                EnterKey.enabled: text.length > 0
+                EnterKey.onClicked: eventname = text
+
+            }
+
+/*            Rectangle {
                 id: colorIndicator
                 color: "transparent"
                 width: 30
                 height: 30
                 //                width: theme.itemSizeSmall
 //                height: theme.itemSizeSmall
-            }
+            } */
 
             Button {
                 id: button2
@@ -141,17 +165,17 @@ Page {
                 onClicked: {
                     var dialog2 = pageStack.push("Sailfish.Silica.ColorPickerDialog")
                     dialog2.accepted.connect(function() {
-                        colorIndicator.color = dialog2.color;
+//                        colorIndicator.color = dialog2.color;
                         colorvalue = dialog2.color
                     })
                 }
             }
 
-            Button {
+/*            Button {
                 text: qsTr("Update")
                 onClicked: {paivitys.countNights()
                 }
-            }
+            } */
 
 
 //            DatePicker {
@@ -177,7 +201,8 @@ Page {
                     })
                     dialog.accepted.connect(function() {
                         button.text = "You chose: " + dialog.dateText;
-                        button.tiikro = dialog.date
+                        button.tiikro = dialog.date;
+                        paivitys.countNights()
                     })
                 }
 

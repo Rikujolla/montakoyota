@@ -45,19 +45,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>UI Template</source>
+        <source>Event Design</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Event name</source>
+        <source>nights</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enter event</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
